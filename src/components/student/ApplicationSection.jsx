@@ -21,7 +21,7 @@ const ApplicationSection = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Internship Card */}
             <Link to="internshipspage" className="block">
-              <div className="bg-white rounded-2xl shadow-lg p-8 text-center hover:shadow-2xl transition duration-300 cursor-pointer">
+              <div className="bg-white rounded-2xl shadow-lg p-8 text-center transition-transform transform hover:scale-105 duration-300 cursor-pointer">
                 <h2 className="text-2xl font-bold text-sky-800 mb-4">
                   Click here for Internships
                 </h2>
@@ -33,7 +33,7 @@ const ApplicationSection = () => {
 
             {/* Job Card */}
             <Link to="jobspage" className="block">
-              <div className="bg-white rounded-2xl shadow-lg p-8 text-center hover:shadow-2xl transition duration-300 cursor-pointer">
+              <div className="bg-white rounded-2xl shadow-lg p-8 text-center transition-transform transform hover:scale-105 duration-300  cursor-pointer">
                 <h2 className="text-2xl font-bold text-sky-800 mb-4">
                   Click here for Jobs
                 </h2>

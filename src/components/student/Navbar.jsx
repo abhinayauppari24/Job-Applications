@@ -60,7 +60,7 @@ const Navbar = () =>{
                 </div>
                 <button onClick={() => setShowSignup(true)}
                     className='bg-sky-700 text-white px-5 py-2 rounded-full'>
-                    Create Account
+                    Sign Up
                 </button>
             </div>
 
