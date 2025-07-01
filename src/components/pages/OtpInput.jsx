@@ -40,6 +40,7 @@ const OtpInput = ({length=4, onOtpSubmit = () => {}}) => {
     const combinedOtp = otp.join('');
     if (combinedOtp.length === length) {
       onOtpSubmit(combinedOtp);
+      // console.log("otp entered");
       navigate('/');
     } else {
       alert('Please enter complete OTP.');

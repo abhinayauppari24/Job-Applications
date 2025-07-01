@@ -1,30 +1,38 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const Login = ({ onClose, switchToSignup }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate();
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log("login successful");
+    // alert('Login successful!');
+    onClose();
+    navigate('/');
 
-    try {
-      const res = await axios.post('http://localhost:8080/api/login', {
-        email,
-        password
-      });
+    // try {
+    //   const res = await axios.post('http://localhost:8080/api/login', {
+    //     email,
+    //     password
+    //   });
 
-      alert("Login successful!");
-      onClose();         // Close the modal
-      navigate('/');     // Go to homepage
-    } catch (err) {
-      if (err.response?.status === 404) {
-        alert("You are not yet registered.");
-      } else if (err.response?.status === 401) {
-        alert("Incorrect password.");
-      } else {
-        alert("Login failed. Please try again.");
-      }
-    }
+    //   alert("Login successful!");
+    //   console.log("Navigate to /")
+    //   onClose();         // Close the modal
+    //   navigate('/');     // Go to homepage
+    // } catch (err) {
+    //   if (err.response?.status === 404) {
+    //     alert("You are not yet registered.");
+    //   } else if (err.response?.status === 401) {
+    //     alert("Incorrect password.");
+    //   } else {
+    //     alert("Login failed. Please try again.");
+    //   }
+    // }
   };
 
   return (

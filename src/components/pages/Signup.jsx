@@ -1,12 +1,17 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import OtpInput from './OtpInput';
+import { useNavigate } from 'react-router-dom';
 
 const Signup = ({ onClose, switchToLogin }) => {
 
-  const [showOtpInput, setShowOtpInput] = useState(false)
+  const [showOtpInput, setShowOtpInput] = useState(false);
+  const navigate = useNavigate();
+
   const onOtpSubmit= (otp) => {
       console.log("signin successful",otp);
+      onClose();
+      navigate('/');
   }
 
   const [formData, setFormData] = useState({   //
