@@ -1,15 +1,20 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { useContext } from 'react';
+import { UserContext } from '../context/UserContext';
 
 const Login = ({ onClose, switchToSignup }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
+  const { setUserEmail } = useContext(UserContext);
+
   
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log("login successful");
+    setUserEmail(email);
     // alert('Login successful!');
     onClose();
     navigate('/');

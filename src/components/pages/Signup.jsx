@@ -2,19 +2,23 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import OtpInput from './OtpInput';
 import { useNavigate } from 'react-router-dom';
+import { useContext } from 'react';
+import { UserContext } from '../context/UserContext';
 
 const Signup = ({ onClose, switchToLogin }) => {
 
   const [showOtpInput, setShowOtpInput] = useState(false);
   const navigate = useNavigate();
+  const { setUserEmail } = useContext(UserContext);
 
   const onOtpSubmit= (otp) => {
       console.log("signin successful",otp);
+      setUserEmail(formData.email);
       onClose();
       navigate('/');
   }
 
-  const [formData, setFormData] = useState({   //
+  const [formData, setFormData] = useState({ 
     email: '',
     password: ''
   });

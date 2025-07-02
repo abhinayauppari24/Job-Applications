@@ -8,6 +8,7 @@ import Applied from './components/student/Applied'
 import InternshipsPage from './components/admin/InternshipsPage'
 import JobsPage from './components/admin/JobsPage'
 import OtpInput from './components/pages/OtpInput'
+import UserProfile from './components/pages/UserProfile'
 
 const App = () => {
   return(
@@ -21,6 +22,7 @@ const App = () => {
           <Route path='/internshipspage' element={<InternshipsPage />} />
           <Route path='/jobspage' element={<JobsPage />} />
           <Route path="/otpinput" element={<OtpInput />} />
+          <Route path="/userprofile" element={<UserProfile/>} />
        </Routes>
     </div>
   )

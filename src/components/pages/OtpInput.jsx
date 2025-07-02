@@ -4,8 +4,8 @@ import { useNavigate } from 'react-router-dom';
 const OtpInput = ({length=4, onOtpSubmit = () => {}}) => {
     const [otp, setOtp] = useState(new Array(length).fill(""));
     const navigate = useNavigate();
-   
     const inputRefs = useRef([]);
+
     useEffect(() =>{
       if(inputRefs.current[0]){
           inputRefs.current[0].focus();
@@ -14,7 +14,7 @@ const OtpInput = ({length=4, onOtpSubmit = () => {}}) => {
 
     const handleChange = (index, e)=>{
         const value = e.target.value;
-        if(isNaN(value)) return;
+        if(isNaN(value)) return; //if entered otp is not a number returns ntg
         const newOtp = [...otp];
         //allow only one input
         newOtp[index] = value.substring(value.length-1);
@@ -22,8 +22,8 @@ const OtpInput = ({length=4, onOtpSubmit = () => {}}) => {
         //submit trigger
         // const combinedOtp = newOtp.join("");
         //  if(combinedOtp.length===4) onOtpSubmit(combinedOtp);
-         //move to next i/p if cur field filled
-         if(value && index<length-1 && inputRefs.current[index+1]){
+         
+         if(value && index<length-1 && inputRefs.current[index+1]){ //move to next i/p if cur field filled
           inputRefs.current[index+1].focus();
          }
     };
